@@ -250,6 +250,34 @@ body {
   cursor: pointer;
 }
 
+.lightbox-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between; /* pushes buttons apart */
+  padding: 0 20px;
+  pointer-events: none; /* allows image clicks */
+}
+
+.lightbox-controls button {
+  pointer-events: all; /* re-enable clicks */
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.lightbox-controls button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
 /* ===== CONTACT / ABOUT / POLICY (UNCHANGED STRUCTURE) ===== */
 .contact-hero,
 .about-hero,
@@ -495,6 +523,11 @@ footer a:hover {
   .product-card img {
     width: 80%;
     height: auto;
+  }
+
+  .lightbox-controls button {
+    font-size: 24px;
+    padding: 8px 12px;
   }
 
   .product-info {
