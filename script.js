@@ -1,10 +1,3 @@
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-links");
-
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.querySelector('.lightbox-img');
 const closeBtn = document.querySelector('.lightbox .close');

@@ -20,27 +20,22 @@
   <!-- ===== NAVBAR ===== -->
   <header>
     <nav class="navbar">
-
       <div class="logo-container">
         <a href="index.html">
           <img src="images/logo.png" alt="Deckun Logo" class="logo">
         </a>
         <span class="motto">Live More Outdoors</span>
       </div>
-
-      <!-- Hamburger Menu -->
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
-        &#9776;
+      <button class="menu-toggle" id="mobile-menu">
+        ☰
       </button>
-
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
-
     </nav>
   </header>
 
@@ -114,11 +109,15 @@
       <a href="terms.html">Terms & Conditions</a>
     </p>
   </footer>
+
+<script>
+    const menu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
   
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/917005286053" class="whatsapp-float">WhatsApp</a>
-    WhatsApp
-  </a>
+    menu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>

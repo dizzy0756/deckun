@@ -20,8 +20,11 @@
       <a href="index.html">
         <img src="images/logo.png" alt="Deckun Logo" class="logo">
       </a>
-      <span class="moto">Live More Outdoors</span>
+      <span class="motto">Live More Outdoors</span>
     </div>
+    <button class="menu-toggle" id="mobile-menu">
+      ☰
+    </button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
@@ -70,8 +73,14 @@
   </p>
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/917005286053" class="whatsapp-float">WhatsApp</a>
+<script>
+  const menu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>

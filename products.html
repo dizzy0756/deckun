@@ -20,8 +20,11 @@
       <a href="index.html">
         <img src="images/logo.png" alt="Deckun Logo" class="logo">
       </a>
-      <span class="moto">Live More Outdoors</span>
+      <span class="motto">Live More Outdoors</span>
     </div>
+    <button class="menu-toggle" id="mobile-menu">
+      ☰
+    </button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
@@ -95,16 +98,6 @@
   </div>
 
   <div class="product-card">
-    <img src="images/tent.jpg" alt="Product 7" class="product-main-img" data-images='["images/product7-1.jpg","images/product7-2.jpg","images/product7-3.jpg"]'>
-    <div class="product-info">
-      <h3>Foldable Moon Chair (Bigger Size)</h3>
-      <p class="price">$129.99</p>
-      <p class="description">Spacious tent, perfect for camping and outdoor adventures.</p>
-      <a href="https://wa.me/917005286053" class="buy-btn">Enquire</a>
-    </div>
-  </div>
-
-  <div class="product-card">
     <img src="images/Foldable Chair with Leg Rest.jpg" alt="Product 8" class="product-main-img" data-images='["images/product8-1.jpg","images/product8-2.jpg","images/product8-3.jpg"]'>
     <div class="product-info">
       <h3>Foldable Chair with Leg Rest</h3>
@@ -156,10 +149,16 @@
   </p>
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/917005286053" class="whatsapp-float">WhatsApp</a>
-
 <script src="script.js"></script>
+
+<script>
+  const menu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
