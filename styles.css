@@ -21,6 +21,13 @@ body {
   color: white;
 }
 
+.meitei {
+  font-size: 30px;
+  font-weight: 400; /* 👈 reduced weight */
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
@@ -70,13 +77,10 @@ body {
   color: var(--accent);
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  background: none;
-  border: none;
+.brand-text {
+  display: flex;
+  flex-direction: column; /* 👈 stack vertically */
+  justify-content: center;
 }
 
 /* ===== HERO ===== */
@@ -460,55 +464,90 @@ footer a:hover {
   font-size: 18px;
 }
 
-.socials a:nth-child(1):hover {
+.socials a:nth-child(1) {
   background: #E1306C; /* Instagram */
   color: white;
 }
 
-.socials a:nth-child(2):hover {
+.socials a:nth-child(2) {
   background: #1877F2; /* Facebook */
   color: white;
 }
 
-.socials a:nth-child(3):hover {
+.socials a:nth-child(3) {
   background: #25D366; /* WhatsApp */
   color: white;
 }
 
+/* Hover effect = brightness */
 .socials a:hover {
-  background: var(--accent);
-  color: black;
+  filter: brightness(1.2);
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
 
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 15px 0;
-    text-align: center;
-  }
-
-  .nav-links.active {
+  .navbar {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 15px 6px 15px; /* 👈 reduced height */
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
   }
 
   .logo {
-    height: 60px;
+    height: 45px; /* 👈 slightly smaller */
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .meitei {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
   }
 
   .motto {
-    font-size: 16px;
+    font-size: 11px;
+    margin-top: 2px;
+    color: #ccc;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* slightly tighter */
+    margin-top: 6px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px; /* slightly smaller */
+    padding: 4px 6px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    color: #ddd;
   }
 
   .hero-container {
