@@ -1,4 +1,14 @@
-const CURRENT_PAGE = location.pathname.split('/').pop() || 'index.html';
+// Detect current page - robust handling for web servers and local files
+const pathname = location.pathname;
+let CURRENT_PAGE = pathname.split('/').pop() || 'index.html';
+// If the filename contains path separators (Windows local file), get just the filename
+if (CURRENT_PAGE.includes('\\')) {
+  CURRENT_PAGE = CURRENT_PAGE.split('\\').pop() || 'index.html';
+}
+// If it's still empty or is the directory name, default to index.html
+if (!CURRENT_PAGE || !CURRENT_PAGE.includes('.html')) {
+  CURRENT_PAGE = 'index.html';
+}
 
 const navHTML = `
 <nav class="navbar">
