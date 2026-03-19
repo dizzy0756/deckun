@@ -1,87 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC6RVEFR78"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DC6RVEFR78');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deckun</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Deckun — Live More Outdoors</title>
+  <meta name="description" content="Deckun offers premium outdoor gear built for adventure — foldable chairs, tables, tents, tarps and more, delivered across Manipur.">
 
-  <!-- CSS -->
+  <meta property="og:title" content="Deckun — Live More Outdoors">
+  <meta property="og:description" content="Premium outdoor products built for adventure and designed for durability.">
+  <meta property="og:image" content="images/outdoor.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC6RVEFR78"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-DC6RVEFR78');
+  </script>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar">
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Deckun Logo" class="logo">
-      </a>
+<header></header>
 
-      <div class="brand-text"> <!-- 👈 THIS FIXES IT -->
-        <span class="meitei">ꯗꯦꯛꯀꯨꯟ</span>
-        <span class="motto">Live More Outdoors</span>
-      </div>
-    </div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-container">
-
-    <!-- LEFT TEXT -->
     <div class="hero-text">
+      <span class="label">Manipur's outdoor store</span>
       <h2>Premium Outdoor Products</h2>
       <p>Built for adventure. Designed for durability.</p>
-    </div>
-
-    <!-- RIGHT IMAGE -->
-    <div class="hero-image">
-      <img src="images/outdoor.jpg" alt="Outdoor Adventure">
       <a href="products.html" class="browse-btn">Browse Products</a>
     </div>
-
+    <div class="hero-image">
+      <img src="images/outdoor.jpg" alt="Outdoor adventure scene" width="1000" height="667">
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>
-    © 2026 Deckun &nbsp;|&nbsp;
-    <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
-    <a href="terms.html">Terms & Conditions</a>
-  </p>
-</footer>
+<footer></footer>
 
-<script>
-  const menu = document.getElementById('mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  menu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-
+<script src="components.js"></script>
 </body>
 </html>

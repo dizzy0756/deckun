@@ -1,97 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC6RVEFR78"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DC6RVEFR78');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Reviews | Deckun</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Customer Reviews — Deckun</title>
+  <meta name="description" content="See what Deckun customers have to say about our outdoor products.">
 
-  <!-- CSS -->
+  <meta property="og:title" content="Customer Reviews — Deckun">
+  <meta property="og:description" content="Real feedback from real outdoor enthusiasts who trust Deckun gear.">
+  <meta property="og:image" content="images/outdoor.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC6RVEFR78"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-DC6RVEFR78');
+  </script>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar">
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Deckun Logo" class="logo">
-      </a>
+<header></header>
 
-      <div class="brand-text"> <!-- 👈 THIS FIXES IT -->
-        <span class="meitei">ꯗꯦꯛꯀꯨꯟ</span>
-        <span class="motto">Live More Outdoors</span>
-      </div>
-    </div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- HERO SECTION -->
 <section class="reviews-hero">
   <h1>What Our Customers Say</h1>
-  <p>Here are some of the experiences and feedback from our valued customers.</p>
+  <p>Real experiences and feedback from the people who use our gear.</p>
 </section>
 
-<!-- REVIEWS GRID -->
 <section class="reviews-grid">
-  <div class="review-card">
-    <img src="review1.jpg" alt="Customer Review 1">
-  </div>
-  <div class="review-card">
-    <img src="review2.jpg" alt="Customer Review 2">
-  </div>
-  <div class="review-card">
-    <img src="review3.jpg" alt="Customer Review 3">
-  </div>
-  <div class="review-card">
-    <img src="review4.jpg" alt="Customer Review 4">
-  </div>
-  <div class="review-card">
-    <img src="review5.jpg" alt="Customer Review 5">
-  </div>
-  <div class="review-card">
-    <img src="review6.jpg" alt="Customer Review 6">
-  </div>
-  <!-- Add more review cards as needed -->
+  <div class="review-card"><img src="review1.jpg" alt="Customer review 1" loading="lazy"></div>
+  <div class="review-card"><img src="review2.jpg" alt="Customer review 2" loading="lazy"></div>
+  <div class="review-card"><img src="review3.jpg" alt="Customer review 3" loading="lazy"></div>
+  <div class="review-card"><img src="review4.jpg" alt="Customer review 4" loading="lazy"></div>
+  <div class="review-card"><img src="review5.jpg" alt="Customer review 5" loading="lazy"></div>
+  <div class="review-card"><img src="review6.jpg" alt="Customer review 6" loading="lazy"></div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>
-    © 2026 Deckun &nbsp;|&nbsp;
-    <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
-    <a href="terms.html">Terms & Conditions</a>
-  </p>
-</footer>
+<footer></footer>
 
-<script>
-  const menu = document.getElementById('mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  menu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-
+<script src="components.js"></script>
 </body>
 </html>

@@ -1,92 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC6RVEFR78"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DC6RVEFR78');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Deckun</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>About Us — Deckun</title>
+  <meta name="description" content="Learn about Deckun — our mission, vision, and the story behind Manipur's outdoor gear brand founded in 2025.">
 
-  <!-- CSS -->
+  <meta property="og:title" content="About Us — Deckun">
+  <meta property="og:description" content="Deckun started as a passion project for outdoor lovers. Discover our story.">
+  <meta property="og:image" content="images/outdoor.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC6RVEFR78"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-DC6RVEFR78');
+  </script>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar">
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Deckun Logo" class="logo">
-      </a>
+<header></header>
 
-      <div class="brand-text"> <!-- 👈 THIS FIXES IT -->
-        <span class="meitei">ꯗꯦꯛꯀꯨꯟ</span>
-        <span class="motto">Live More Outdoors</span>
-      </div>
-    </div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- HERO / HEADER SECTION -->
 <section class="about-hero">
   <h1>About Deckun</h1>
-  <p>We provide premium outdoor products to help adventurers explore nature in style and comfort.</p>
+  <p>At Deckun, we bring you thoughtfully selected outdoor essentials — designed for every explorer, at a fair and accessible price. We believe in quality gear that fuels your outdoor dreams, no matter the adventure.</p>
 </section>
 
-<!-- ABOUT CONTENT -->
 <section class="about-content">
   <div class="about-card">
     <h2>Our Mission</h2>
-    <p>At Deckun, our mission is to provide high-quality outdoor gear that combines durability, style, and functionality. We aim to make every outdoor experience memorable and safe.</p>
+    <p>To provide high-quality outdoor gear that combines durability, style, and functionality — making every outdoor experience memorable and safe.</p>
   </div>
-
   <div class="about-card">
     <h2>Our Vision</h2>
-    <p>We envision a world where every outdoor enthusiast has access to products that enhance their adventure while caring for the environment and promoting responsible exploration.</p>
+    <p>A world where every outdoor enthusiast has access to products that enhance their adventure while caring for the environment and promoting responsible exploration.</p>
   </div>
-
   <div class="about-card">
     <h2>Our Story</h2>
-    <p>Founded in December 2025, Deckun started as a small passion project for outdoor lovers. Today, we have grown into a trusted brand for quality outdoor equipment, keeping innovation and customer satisfaction at the heart of everything we do.</p>
+    <p>Founded in December 2025, Deckun started as a small passion project for outdoor lovers in Manipur. Today we've grown into a trusted name for quality outdoor equipment, keeping innovation and customer satisfaction at the heart of everything we do.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>
-    © 2026 Deckun &nbsp;|&nbsp;
-    <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
-    <a href="terms.html">Terms & Conditions</a>
-  </p>
-</footer>
+<footer></footer>
 
-<script>
-  const menu = document.getElementById('mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  menu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-
+<script src="components.js"></script>
 </body>
 </html>
