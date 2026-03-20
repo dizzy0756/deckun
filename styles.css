@@ -705,7 +705,7 @@ footer a:hover { color: var(--moss); }
 @media (max-width: 480px) {
   .hero { padding: var(--sp-8) var(--sp-4) var(--sp-4); }
   .hero-text h2 { font-size: 1.8rem; }
-  .hero-image { margin-bottom: 0; }
+  .hero-image { margin-bottom: 0; justify-content: flex-start; }
   .hero-image img { max-height: 35vh; width: 100%; margin-bottom: 0; object-fit: contain; }
   .browse-btn { padding: var(--sp-3) var(--sp-6); font-size: 0.8rem; }
   
