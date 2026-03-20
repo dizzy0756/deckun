@@ -55,7 +55,7 @@
   --shadow-card: 0 2px 12px rgba(0,0,0,0.18);
   --shadow-lift: 0 8px 28px rgba(0,0,0,0.30);
 
-  /* Transition — snappy, never playful */
+  /* Transition */
   --t: 150ms ease-out;
 
   /* Fonts */
@@ -90,7 +90,6 @@ h3 { font-size: 1.2rem; }
 
 p { color: var(--text-muted); }
 
-/* Category label — uppercase + tracked */
 .label {
   font-family: var(--font-body);
   font-size: 0.7rem;
@@ -100,7 +99,6 @@ p { color: var(--text-muted); }
   color: var(--moss);
 }
 
-/* Price — its own weight, separate from copy */
 .price {
   font-family: var(--font-body);
   font-size: 1.1rem;
@@ -188,7 +186,6 @@ header {
 
 .nav-links a[aria-current="page"] {
   color: var(--fern);
-  border-bottom-color: var(--fern);
   border-bottom: 2px solid var(--fern);
   font-weight: 600;
   padding-bottom: 2px;
@@ -217,6 +214,7 @@ header {
 .browse-btn {
   font-size: 0.875rem;
   padding: var(--sp-4) var(--sp-8);
+  margin-top: var(--sp-6);
 }
 
 .buy-btn {
@@ -233,7 +231,6 @@ header {
   box-shadow: var(--shadow-lift);
 }
 
-/* Ghost */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -260,27 +257,35 @@ header {
 
 /* --- Hero -------------------------------------------------- */
 /*
- * .hero is a column flex container that fills the full viewport
- * between the sticky nav and footer (flex:1 on body's column).
- * .hero-text and .hero-image are direct children — both natural
- * height — so space-evenly places three equal gaps:
- *   [gap] hero-text [gap] hero-image [gap]
+ * Desktop (>900px): hero-container is a row — text left, image+button right.
+ * Mobile  (≤900px): hero-container switches to column — text top, image bottom.
+ * Image always renders at its natural resolution (no forced height/cropping).
  */
 .hero {
-  flex: 1;
+  flex: 1;                        /* fills space between sticky nav and footer */
   min-height: calc(100vh - 72px);
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  padding: 0 var(--sp-8);
+  justify-content: center;
+  padding: var(--sp-12);
   width: 100%;
+  box-sizing: border-box;
 }
 
-.hero-text {
-  max-width: 520px;
+.hero-container {
+  display: flex;
+  flex-direction: row;            /* side by side on desktop */
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-12);
   width: 100%;
-  text-align: center;
+  max-width: 1280px;
+}
+
+/* Left column — text only */
+.hero-text {
+  flex: 1;
+  text-align: left;
 }
 
 .hero-text .label {
@@ -289,7 +294,7 @@ header {
 }
 
 .hero-text h2 {
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   color: var(--text-on-dark);
   line-height: 1.1;
 }
@@ -300,21 +305,21 @@ header {
   color: rgba(255,255,255,0.68);
 }
 
+/* Right column — image + button stacked */
 .hero-image {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--sp-4);
-  width: 100%;
-  max-width: 520px;
 }
 
 .hero-image img {
   width: 100%;
-  max-width: 480px;
+  height: auto;                   /* natural aspect ratio — never cropped */
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-lift);
-  object-fit: cover;
+  display: block;
 }
 
 .hero-image .browse-btn {
@@ -352,6 +357,9 @@ header {
   width: 260px;
   background: var(--snow);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-card .img-wrap img {
@@ -667,10 +675,31 @@ footer a:hover { color: var(--moss); }
 
 /* --- Responsive -------------------------------------------- */
 @media (max-width: 900px) {
-  .hero { padding: 0 var(--sp-6); }
-  .hero-text { max-width: 100%; }
-  .hero-image { max-width: 100%; }
-  .hero-image img { max-width: 100%; max-height: 50vh; }
+  /* Hero: hero-container switches to column — text top, image + button bottom */
+  .hero {
+    padding: var(--sp-8) var(--sp-6);
+    align-items: stretch;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: var(--sp-8);
+  }
+
+  .hero-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  /* Natural resolution — width 100% of column, height auto, zero cropping */
+  .hero-image img {
+    width: 100%;
+    height: auto;
+  }
 
   .products { padding: var(--sp-8) var(--sp-4); }
   .product-card { flex-direction: column; }
@@ -690,10 +719,10 @@ footer a:hover { color: var(--moss); }
   .nav-links a { font-size: 0.8rem; padding-bottom: 2px; }
   .nav-links a[aria-current="page"] { border-bottom: 2px solid var(--fern); }
 
-  .hero { padding: 0 var(--sp-4); min-height: calc(100vh - 60px); }
-  .hero-text { max-width: 100%; }
-  .hero-image { max-width: 100%; }
-  .hero-image img { max-width: 100%; max-height: 50vh; }
+  .hero { padding: var(--sp-6) var(--sp-4); }
+  .hero-container { gap: var(--sp-6); }
+  /* Image still natural resolution — no max-height clamp */
+  .hero-image img { width: 100%; height: auto; }
 
   .product-card .img-wrap { width: 100%; height: auto; }
 
@@ -704,9 +733,11 @@ footer a:hover { color: var(--moss); }
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 0 var(--sp-4); min-height: calc(100vh - 56px); }
+  .hero { padding: var(--sp-4); }
+  .hero-container { gap: var(--sp-4); }
   .hero-text h2 { font-size: 1.8rem; }
-  .hero-image img { max-height: 38vh; }
+  /* Natural resolution preserved on small screens too */
+  .hero-image img { width: 100%; height: auto; }
   .browse-btn { padding: var(--sp-3) var(--sp-6); font-size: 0.8rem; }
 
   .product-card { border-radius: var(--r-sm); }
