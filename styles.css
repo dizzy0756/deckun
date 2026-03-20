@@ -261,11 +261,25 @@ header {
 }
 
 /* --- Hero -------------------------------------------------- */
+
+/*
+ * Equal-space layout: hero fills the full viewport height (minus the sticky
+ * navbar) and distributes its two content blocks — hero-text and hero-image —
+ * with equal breathing room above, between, and below them using
+ * justify-content: space-evenly on a column flex container.
+ */
 .hero {
-  min-height: 92vh;
+  /* Stretch to fill the remaining viewport below the navbar */
+  flex: 1;                          /* grows inside body's column flex */
+  min-height: calc(100vh - 72px);   /* fallback if flex context isn't set */
+
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;    /* equal gaps: top / between blocks / bottom */
   align-items: center;
-  padding: var(--sp-12) var(--sp-8);
+
+  padding: 0 var(--sp-8);           /* only horizontal padding; vertical handled by space-evenly */
+  width: 100%;
 }
 
 .hero-container {
@@ -669,7 +683,11 @@ footer a:hover { color: var(--moss); }
 
 /* --- Responsive: tablet ------------------------------------ */
 @media (max-width: 900px) {
-  .hero { padding: var(--sp-16) var(--sp-6) var(--sp-8); min-height: auto; }
+  .hero {
+    flex-direction: column;
+    padding: 0 var(--sp-6);
+    min-height: calc(100vh - 72px);
+  }
   .hero-container { flex-direction: column; gap: var(--sp-8); text-align: center; }
   .hero-text { max-width: 100%; }
   .hero-text p { max-width: 100%; }
@@ -684,6 +702,18 @@ footer a:hover { color: var(--moss); }
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 768px) and (min-width: 481px) {
+  .hero {
+    padding: 0 var(--sp-4);
+    min-height: calc(100vh - 60px);
+  }
+  .hero-container { flex-direction: column; gap: var(--sp-6); text-align: center; }
+  .hero-text { max-width: 100%; }
+  .hero-text p { max-width: 100%; }
+  .hero-image { justify-content: center; }
+  .hero-image img { max-width: 100%; max-height: 50vh; object-fit: contain; }
+}
+
 @media (max-width: 768px) {
   .navbar { padding: var(--sp-3) var(--sp-4); }
   .logo { height: 40px; }
@@ -693,7 +723,16 @@ footer a:hover { color: var(--moss); }
   .nav-links a { font-size: 0.8rem; padding-bottom: 2px; }
   .nav-links a[aria-current="page"] { border-bottom: 2px solid var(--fern); }
 
+  .hero {
+    padding: 0 var(--sp-4);
+    min-height: calc(100vh - 60px);
+  }
+  .hero-container { flex-direction: column; gap: var(--sp-6); text-align: center; }
+  .hero-text { max-width: 100%; }
+  .hero-text p { max-width: 100%; }
+  .hero-image { justify-content: center; }
   .hero-image img { max-width: 100%; max-height: 50vh; object-fit: contain; }
+
   .product-card .img-wrap { width: 100%; height: 240px; }
 
   .contact-info,
@@ -703,7 +742,10 @@ footer a:hover { color: var(--moss); }
 }
 
 @media (max-width: 480px) {
-  .hero { padding: var(--sp-8) var(--sp-4) var(--sp-4); }
+  .hero {
+    padding: 0 var(--sp-4);
+    min-height: calc(100vh - 56px);
+  }
   .hero-text h2 { font-size: 1.8rem; }
   .hero-image { margin-bottom: 0; justify-content: flex-start; }
   .hero-image img { max-height: 35vh; width: 100%; margin-bottom: 0; object-fit: contain; }
