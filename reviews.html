@@ -115,7 +115,7 @@
 
     <div class="form-submit">
       <span class="form-note">Reviews are public and visible to everyone.</span>
-      <button type="submit" class="submit-btn" id="submit-btn">
+      <button type="submit" class="submit-btn" id="submit-btn" onclick="trackLead('', 'product_review')">
         <span id="btn-label">Post Review</span>
       </button>
     </div>
@@ -129,10 +129,10 @@
   <div class="feed-header">
     <h2>All Reviews</h2>
     <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="5">★★★★★</button>
-      <button class="filter-btn" data-filter="4">★★★★</button>
-      <button class="filter-btn" data-filter="3">★★★</button>
+      <button class="filter-btn active" data-filter="all" onclick="trackViewContent('filter_all_reviews')">All</button>
+      <button class="filter-btn" data-filter="5" onclick="trackViewContent('filter_5_star')">★★★★★</button>
+      <button class="filter-btn" data-filter="4" onclick="trackViewContent('filter_4_star')">★★★★</button>
+      <button class="filter-btn" data-filter="3" onclick="trackViewContent('filter_3_star')">★★★</button>
     </div>
   </div>
 

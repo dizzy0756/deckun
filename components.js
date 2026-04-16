@@ -13,7 +13,7 @@ if (!CURRENT_PAGE || !CURRENT_PAGE.includes('.html')) {
 const navHTML = `
 <nav class="navbar">
   <div class="logo-container">
-    <a href="index.html">
+    <a href="index.html" onclick="trackViewContent('home')">
       <img src="images/logo.png" alt="Deckun Logo" class="logo" width="80" height="80">
     </a>
     <div class="brand-text">
@@ -22,19 +22,19 @@ const navHTML = `
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html" onclick="trackViewContent('nav_home')">Home</a></li>
+    <li><a href="products.html" onclick="trackViewContent('nav_products')">Products</a></li>
+    <li><a href="reviews.html" onclick="trackViewContent('nav_reviews')">Reviews</a></li>
+    <li><a href="contact.html" onclick="trackContact('', 'nav_contact')">Contact</a></li>
+    <li><a href="about.html" onclick="trackViewContent('nav_about')">About Us</a></li>
   </ul>
 </nav>`;
 
 const footerHTML = `
 <p>
   &copy; 2026 Deckun &nbsp;|&nbsp;
-  <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
-  <a href="terms.html">Terms &amp; Conditions</a>
+  <a href="privacy.html" onclick="trackViewContent('privacy_policy')">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="terms.html" onclick="trackViewContent('terms_conditions')">Terms &amp; Conditions</a>
 </p>`;
 
 function initComponents() {
@@ -55,3 +55,50 @@ function initComponents() {
 }
 
 document.addEventListener('DOMContentLoaded', initComponents);
+
+// Meta Pixel Event Tracking Helper Functions
+function trackPixelEvent(eventName, eventData = {}) {
+  if (typeof fbq !== 'undefined') {
+    fbq('track', eventName, eventData);
+  }
+}
+
+// Track navigation/view events
+function trackViewContent(value, currency = 'INR') {
+  trackPixelEvent('ViewContent', {
+    value: value,
+    currency: currency
+  });
+}
+
+// Track product inquiry/add to cart
+function trackAddToCart(value, currency = 'INR', content_name = 'Product Inquiry') {
+  trackPixelEvent('AddToCart', {
+    value: value,
+    currency: currency,
+    content_name: content_name
+  });
+}
+
+// Track contact actions
+function trackContact(value = '', method = 'direct_contact') {
+  trackPixelEvent('Contact', {
+    value: value,
+    method: method
+  });
+}
+
+// Track lead/form submissions
+function trackLead(value = '', lead_type = 'review') {
+  trackPixelEvent('Lead', {
+    value: value,
+    lead_type: lead_type
+  });
+}
+
+// Generic link click tracking
+function trackLinkClick(text = '') {
+  trackPixelEvent('ViewContent', {
+    content_name: text || 'Link Click'
+  });
+}
