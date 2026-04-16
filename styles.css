@@ -270,15 +270,13 @@ header {
 
 .hero-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: var(--sp-12);
   width: 100%;
   max-width: 1280px;
 }
 
-/* Left column — text only */
 .hero-text {
   flex: 1;
   text-align: left;
@@ -671,7 +669,6 @@ footer a:hover { color: var(--moss); }
 
 /* --- Responsive -------------------------------------------- */
 @media (max-width: 900px) {
-  /* Hero: hero-container switches to column — text top, image + button bottom */
   .hero {
     padding: var(--sp-8) var(--sp-6);
     align-items: stretch;
@@ -679,7 +676,7 @@ footer a:hover { color: var(--moss); }
 
   .hero-container {
     flex-direction: column;
-    gap: var(--sp-8);
+    gap: var(--sp-4);
   }
 
   .hero-text {
@@ -691,7 +688,6 @@ footer a:hover { color: var(--moss); }
     width: 100%;
   }
 
-  /* Natural resolution — width 100% of column, height auto, zero cropping */
   .hero-image img {
     width: 100%;
     height: auto;
@@ -716,8 +712,7 @@ footer a:hover { color: var(--moss); }
   .nav-links a[aria-current="page"] { border-bottom: 2px solid var(--fern); }
 
   .hero { padding: var(--sp-6) var(--sp-4); }
-  .hero-container { gap: var(--sp-6); }
-  /* Image still natural resolution — no max-height clamp */
+  .hero-container { gap: var(--sp-2); }
   .hero-image img { width: 100%; height: auto; }
 
   .product-card .img-wrap { width: 100%; height: auto; }
@@ -730,9 +725,8 @@ footer a:hover { color: var(--moss); }
 
 @media (max-width: 480px) {
   .hero { padding: var(--sp-4); }
-  .hero-container { gap: var(--sp-4); }
+  .hero-container { gap: var(--sp-1); }
   .hero-text h2 { font-size: 1.8rem; }
-  /* Natural resolution preserved on small screens too */
   .hero-image img { width: 100%; height: auto; }
   .browse-btn { padding: var(--sp-3) var(--sp-6); font-size: 0.8rem; }
 
