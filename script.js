@@ -40,7 +40,6 @@ if (lightbox) {
     if (e.target === lightbox) lightbox.style.display = 'none';
   });
 
-  // Keyboard nav
   document.addEventListener('keydown', e => {
     if (lightbox.style.display !== 'flex') return;
     if (e.key === 'ArrowRight') nextBtn.click();
@@ -48,7 +47,6 @@ if (lightbox) {
     if (e.key === 'Escape') closeBtn.click();
   });
 
-  // Touch swipe
   let touchStartX = 0;
   lightbox.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;

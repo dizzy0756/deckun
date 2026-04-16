@@ -1,11 +1,10 @@
-// Detect current page - robust handling for web servers and local files
 const pathname = location.pathname;
 let CURRENT_PAGE = pathname.split('/').pop() || 'index.html';
-// If the filename contains path separators (Windows local file), get just the filename
+
 if (CURRENT_PAGE.includes('\\')) {
   CURRENT_PAGE = CURRENT_PAGE.split('\\').pop() || 'index.html';
 }
-// If it's still empty or is the directory name, default to index.html
+
 if (!CURRENT_PAGE || !CURRENT_PAGE.includes('.html')) {
   CURRENT_PAGE = 'index.html';
 }
@@ -42,7 +41,6 @@ function initComponents() {
   if (header) {
     header.innerHTML = navHTML;
 
-    // Mark active nav link
     header.querySelectorAll('.nav-links a').forEach(link => {
       if (link.getAttribute('href') === CURRENT_PAGE) {
         link.setAttribute('aria-current', 'page');
@@ -56,49 +54,28 @@ function initComponents() {
 
 document.addEventListener('DOMContentLoaded', initComponents);
 
-// Meta Pixel Event Tracking Helper Functions
 function trackPixelEvent(eventName, eventData = {}) {
   if (typeof fbq !== 'undefined') {
     fbq('track', eventName, eventData);
   }
 }
 
-// Track navigation/view events
 function trackViewContent(value, currency = 'INR') {
-  trackPixelEvent('ViewContent', {
-    value: value,
-    currency: currency
-  });
+  trackPixelEvent('ViewContent', { value, currency });
 }
 
-// Track product inquiry/add to cart
 function trackAddToCart(value, currency = 'INR', content_name = 'Product Inquiry') {
-  trackPixelEvent('AddToCart', {
-    value: value,
-    currency: currency,
-    content_name: content_name
-  });
+  trackPixelEvent('AddToCart', { value, currency, content_name });
 }
 
-// Track contact actions
 function trackContact(value = '', method = 'direct_contact') {
-  trackPixelEvent('Contact', {
-    value: value,
-    method: method
-  });
+  trackPixelEvent('Contact', { value, method });
 }
 
-// Track lead/form submissions
 function trackLead(value = '', lead_type = 'review') {
-  trackPixelEvent('Lead', {
-    value: value,
-    lead_type: lead_type
-  });
+  trackPixelEvent('Lead', { value, lead_type });
 }
 
-// Generic link click tracking
 function trackLinkClick(text = '') {
-  trackPixelEvent('ViewContent', {
-    content_name: text || 'Link Click'
-  });
+  trackPixelEvent('ViewContent', { content_name: text || 'Link Click' });
 }
