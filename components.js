@@ -16,7 +16,6 @@ const navHTML = `
       <img src="images/logo.png" alt="Deckun Logo" class="logo" width="80" height="80">
     </a>
     <div class="brand-text">
-      <span class="meitei">ꯗꯦꯛꯀꯨꯟ</span>
       <span class="motto">Live More Outdoors</span>
     </div>
   </div>

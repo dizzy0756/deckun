@@ -144,14 +144,6 @@ header {
   gap: 2px;
 }
 
-.meitei {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--text-on-dark);
-  letter-spacing: 0.02em;
-}
 
 .motto {
   font-size: 0.68rem;
