@@ -1,3 +1,4 @@
+// ─── Lightbox ────────────────────────────────────────────────────────────────
 const lightbox = document.getElementById('lightbox');
 
 if (lightbox) {
@@ -59,3 +60,33 @@ if (lightbox) {
     }
   });
 }
+
+// ─── WhatsApp Enquire Buttons ────────────────────────────────────────────────
+const WHATSAPP_NUMBER = '917005286053'; // Your WhatsApp number (with country code, no +)
+const PAGE_URL = 'https://www.deckun.in/products'; // ← update to your actual products page URL
+
+document.querySelectorAll('.whatsapp-enquire').forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const product = this.dataset.product;
+    const price   = this.dataset.price;
+    const image   = this.dataset.image;
+    const trackValue = parseFloat(this.dataset.trackValue) || 0;
+
+    // Pre-filled message sent to WhatsApp
+    const message =
+      `Hi! I'm interested in the *${product}* (${price}) from Deckun.\n\n` +
+      `🛒 Product page: ${PAGE_URL}\n` +
+      `Could you please share more details?`;
+
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    // Fire existing GA / Meta tracking
+    if (typeof trackAddToCart === 'function') {
+      trackAddToCart(trackValue, 'INR', product);
+    }
+
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+  });
+});
