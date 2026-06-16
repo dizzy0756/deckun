@@ -75,7 +75,7 @@ document.querySelectorAll('.whatsapp-enquire').forEach(btn => {
     const trackValue = parseFloat(this.dataset.trackValue) || 0;
 
     // Build the absolute thumbnail URL for sharing
-    const thumbUrl = new URL(image, window.location.href).href;
+    const thumbUrl = window.location.origin + '/' + image;
 
     // Pre-filled message sent to WhatsApp
     const message =
