@@ -74,10 +74,14 @@ document.querySelectorAll('.whatsapp-enquire').forEach(btn => {
     const image   = this.dataset.image;
     const trackValue = parseFloat(this.dataset.trackValue) || 0;
 
+    // Build the absolute thumbnail URL for sharing
+    const thumbUrl = new URL(image, window.location.href).href;
+
     // Pre-filled message sent to WhatsApp
     const message =
       `Hi! I'm interested in the *${product}* (${price}) from Deckun.\n\n` +
       `🛒 Product page: ${PAGE_URL}\n` +
+      `🖼️ ${thumbUrl}\n\n` +
       `Could you please share more details?`;
 
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
