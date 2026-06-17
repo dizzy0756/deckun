@@ -107,25 +107,6 @@
     }
     .pd-main-img:hover { filter: brightness(1.06); }
 
-    .pd-thumbs {
-      display: flex;
-      gap: var(--sp-2);
-    }
-    .pd-thumb {
-      flex: 1;
-      aspect-ratio: 1;
-      object-fit: contain;
-      width: 100%;
-      height: auto;
-      max-width: 100%;
-      border-radius: var(--r-sm);
-      cursor: pointer;
-      opacity: 0.65;
-      transition: opacity var(--t), outline var(--t);
-      background: var(--snow);
-    }
-    .pd-thumb:hover, .pd-thumb.active { opacity: 1; outline: 2px solid var(--fern); }
-
     /* Info panel */
     .pd-info {
       flex: 1;
@@ -254,11 +235,6 @@
       <img id="pd-main" class="pd-main-img"
            src="../images/Foldable Chair with armrest.jpg" alt="Foldable Chair with Armrest"
            width="380" height="285">
-      <div class="pd-thumbs">
-        <img class="pd-thumb" src="../images/product5-1.jpg" alt="Foldable Chair with Armrest" width="120" height="120" loading="lazy">
-        <img class="pd-thumb" src="../images/product5-2.jpg" alt="Foldable Chair with Armrest" width="120" height="120" loading="lazy">
-        <img class="pd-thumb" src="../images/product5-3.jpg" alt="Foldable Chair with Armrest" width="120" height="120" loading="lazy">
-      </div>
     </div>
 
     <!-- Info -->
