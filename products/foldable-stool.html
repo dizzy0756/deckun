@@ -96,9 +96,10 @@
     }
 
     .pd-main-img {
+      object-fit: contain;
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      height: auto;
+      max-width: 100%;
       border-radius: var(--r-md);
       cursor: zoom-in;
       transition: filter var(--t);
@@ -113,7 +114,10 @@
     .pd-thumb {
       flex: 1;
       aspect-ratio: 1;
-      object-fit: cover;
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
       border-radius: var(--r-sm);
       cursor: pointer;
       opacity: 0.65;
