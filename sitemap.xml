@@ -1,53 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://deckun.in/</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://deckun.in/products.html</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://deckun.in/reviews.html</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://deckun.in/about.html</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://deckun.in/contact.html</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://deckun.in/privacy.html</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://deckun.in/terms.html</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
+  <url><loc>https://deckun.in/</loc></url>
+  <url><loc>https://deckun.in/products.html</loc></url>
+  <url><loc>https://deckun.in/products/foldable-moon-chair</loc></url>
+  <url><loc>https://deckun.in/products/foldable-table</loc></url>
+  <url><loc>https://deckun.in/products/camping-tent</loc></url>
+  <url><loc>https://deckun.in/products/foldable-stool</loc></url>
+  <url><loc>https://deckun.in/products/foldable-chair-armrest</loc></url>
+  <url><loc>https://deckun.in/products/hammock-mosquito-net</loc></url>
+  <url><loc>https://deckun.in/products/foldable-chair-leg-rest</loc></url>
+  <url><loc>https://deckun.in/products/camping-tarp</loc></url>
+  <url><loc>https://deckun.in/products/cassette-stove</loc></url>
+  <url><loc>https://deckun.in/reviews.html</loc></url>
+  <url><loc>https://deckun.in/contact.html</loc></url>
+  <url><loc>https://deckun.in/about.html</loc></url>
 </urlset>
