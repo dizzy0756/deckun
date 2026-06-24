@@ -1,0 +1,5 @@
+Pritam,20,56
+Jonita,19,12
+Lucky,20,60
+Carolina,21,67
+Thoiba,23,45
