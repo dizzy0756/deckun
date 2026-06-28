@@ -21,6 +21,7 @@ const navHTML = `
       <img src="${root}images/logo.png" alt="Deckun Logo" class="logo" width="80" height="80">
     </a>
     <div class="brand-text">
+      <span class="brand-name">Deckun</span>
       <span class="motto">Live More Outdoors</span>
     </div>
   </div>

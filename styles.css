@@ -138,6 +138,14 @@ header {
   width: auto;
 }
 
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--snow);
+  letter-spacing: -0.02em;
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
